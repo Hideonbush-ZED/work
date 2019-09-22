@@ -8,14 +8,27 @@
 </head>
 <body>
     <script>
-        var a = Number(prompt('请输入第一个数字'));
-        var b = Number(prompt('请输入第二个数字'));
-        if(isNaN(a&&b)){
-            alert('请输入数字');
-        }else{
-            var c = prompt('请输入运算符(+-*/)');
-            alert(c === '+' ? a + b : c === '-' ? a - b : c === '*' ? a * b : c === '/' ? a / b : '请输入运算符');
-        }
+        do{
+            var k = Number(prompt('请输入卡号'));
+            var y = 100000;
+            if(isNaN(k)||k==""){
+                alert('请输入数字');
+            }else{
+                var m = Number(prompt('请输入密码'));
+                if(isNaN(m)||m==""){
+                    alert('请输入数字');
+                }else{
+                    alert('您的余额为'+y);
+                    var q = Number(prompt('请输入取款金额'));
+                    if(q>y||isNaN(q)){
+                        alert('您的余额不足')
+                    }else{
+                        alert('取款成功');
+                        alert('您的余额为' + (y-q));
+                    }
+                }
+            }
+        }while(isNaN(k)||k==""||isNaN(m)||m==""||q>y||isNaN(q));
     </script>
 </body>
 </html>
